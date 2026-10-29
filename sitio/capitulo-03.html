@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 · Estado del arte y evidencia empírica — ¿En qué haría clic ChatGPT?</title>
+  <meta name="description" content="Revisión de tres investigaciones recientes que comparan usuarios sintéticos con humanos reales: credibilidad, sesgos de complacencia y precisión de las predicciones.">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <noscript>
+    <div class="noscript-banner">
+      <strong>Navegación básica sin JavaScript:</strong>
+      <a href="index.html">Inicio</a> |
+      <a href="capitulo-01.html">Capítulo 01</a> |
+      <a href="capitulo-02.html">Capítulo 02</a> |
+      <a href="capitulo-03.html">Capítulo 03</a> |
+      <a href="capitulo-04.html">Capítulo 04</a> |
+      <a href="capitulo-05.html">Capítulo 05</a> |
+      <a href="referencias.html">Referencias</a> |
+      <a href="acerca.html">Acerca de</a>
+    </div>
+  </noscript>
+
+  <header class="mobile-header" id="mobile-header"></header>
+  <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+  <div class="site-wrapper">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <div class="main-column">
+      <main id="contenido" class="main-content">
+        <div id="breadcrumbs" class="breadcrumbs"></div>
+        <div id="chapter-meta" class="chapter-meta"></div>
+
+        <h1>Estado del arte y evidencia empírica</h1>
+
+        <p class="lead-paragraph">
+          La literatura científica reciente permite evaluar la distancia entre la verosimilitud discursiva de los modelos de IA y su capacidad real para reproducir los patrones de interacción y toma de decisiones humanas.
+        </p>
+
+        <!-- Sección 1 -->
+        <h2 id="credibilidad-precision">Credibilidad versus precisión</h2>
+        <p>
+          Los estudios que comparan usuarios sintéticos con personas reales evalúan sobre todo dos cosas: su <strong>credibilidad</strong> (si a una persona le parece humano) y su <strong>precisión</strong> (si actúa como lo haría un humano concreto). Tres estudios recientes, con modelos, parámetros y objetivos distintos, permiten ver qué ocurre cuando se mide lo segundo.
+        </p>
+
+        <!-- Sección 2 -->
+        <h2 id="estudio-synthetic-users">Estudio 1: Synthetic Users y el riesgo de la adulación</h2>
+        <p>
+          El primero es un estudio comparativo entre usuarios reales y usuarios sintéticos generados con Synthetic Users y ChatGPT <strong>[Autores, año]</strong>. Concluye que la IA es útil para sintetizar grandes volúmenes de datos sobre un grupo específico de usuarios y presentarlos de forma digerible.
+        </p>
+        <p>
+          Sin embargo, sus autores advierten que las limitaciones son numerosas y que no desaparecerían necesariamente con mejores modelos. Destacan como especialmente riesgosa la <em>sycophancy</em> o adulación, es decir, la tendencia de los modelos a complacer y validar lo que se les plantea, que según el estudio produce una versión poco realista del comportamiento humano.
+        </p>
+        
+        <blockquote>
+          <p>“Las personas reales valoran algunas cosas más que otras. Los usuarios sintéticos parecen darle importancia a todo. Esto no resulta útil para priorizar funcionalidades ni para crear perfiles de usuario”.</p>
+          <footer>— [Autores, año, p. X], traducción propia</footer>
+        </blockquote>
+
+        <!-- Sección 3 -->
+        <h2 id="estudio-what-would-gpt-click">Estudio 2: What Would GPT Click? y clics iniciales</h2>
+        <p>
+          El segundo, <em>What Would GPT Click?</em> <strong>[Autores, año]</strong>, comparó los primeros clics de usuarios reales con los de GPT en doce pruebas de <em>first click testing</em>. La distribución de clics de GPT fue significativamente distinta de la humana en el 53% de las tareas.
+        </p>
+        <p>
+          El elemento más clicado coincidió con el de las personas en el 71% de los casos, pero el orden del resto de las opciones apenas se parecía. GPT tendía a elegir un CTA “vencedor”, semánticamente cercano a la tarea, y a concentrar en él casi todos los clics, mientras que las personas repartían los suyos entre más opciones.
+        </p>
+        <p>
+          Además, cometía dos tipos de error: generaba clics en elementos que los usuarios reales ignoraban y omitía zonas que los humanos sí usaban de forma destacada, incluidos malentendidos de etiquetas que revelaban problemas reales de usabilidad. Ni el razonamiento paso a paso ni el uso de personas detalladas corrigieron estas diferencias de forma significativa.
+        </p>
+
+        <!-- Sección 4 -->
+        <h2 id="estudio-amazon">Estudio 3: Predicción en sesiones de compra online (Amazon)</h2>
+        <p>
+          El tercero <strong>[Autores, año]</strong> construyó un carrito de compras a partir de un extenso conjunto de datos de sesiones reales de Amazon. La tarea era predecir la siguiente acción del usuario (clic, búsqueda o abandono) a partir del HTML simplificado de la página y del historial de la sesión, con una métrica de coincidencia exacta y un F1 para anticipar si la sesión terminaba en compra o en abandono.
+        </p>
+        <p>
+          Se evaluaron, solo con prompts, modelos de código abierto (principalmente DeepSeek-R1) y propietarios (varias versiones de Claude 3, 3.5 y 3.7, y GPT-4.1), y luego se repitió la comparación tras un ajuste fino con datos reales.
+        </p>
+        <p>
+          Sin ajustar, los modelos fueron muy imprecisos: DeepSeek-R1 acertó la acción siguiente en el 11,86% de los casos, Claude 3.5 Sonnet v2 en el 11,69% y los modelos pequeños entre el 3% y el 8%. Tendían a comprar de más, a abusar de los filtros y a no reformular búsquedas ni abandonar la sesión como hacen las personas: Claude generó cerca de un 25% de compras frente a cerca de un 3% en humanos. El ajuste fino mejoró los resultados de forma clara, aunque la precisión absoluta siguió siendo baja.
+        </p>
+
+        <!-- Tabla comparativa de los tres estudios -->
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Estudio</th>
+                <th>Modelos evaluados</th>
+                <th>Tarea / Métrica</th>
+                <th>Hallazgo principal de divergencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Synthetic Users vs. Reales</strong></td>
+                <td>Synthetic Users + ChatGPT</td>
+                <td>Síntesis de perfiles y priorización de funcionalidades</td>
+                <td>Sesgo de adulación (<em>sycophancy</em>): los sintéticos validan todo por igual sin jerarquización real.</td>
+              </tr>
+              <tr>
+                <td><strong>What Would GPT Click?</strong></td>
+                <td>GPT (múltiples configuraciones)</td>
+                <td><em>First click testing</em> en 12 tareas interactivas</td>
+                <td>53% distribución discordante; hiperconcentración en CTA obvio y omisión de errores de etiquetado.</td>
+              </tr>
+              <tr>
+                <td><strong>Predicción en Amazon</strong></td>
+                <td>DeepSeek-R1, Claude 3/3.5/3.7, GPT-4.1</td>
+                <td>Predicción de próxima acción (clic, búsqueda, abandono)</td>
+                <td>Acierto de acción en solo 11-12%; sobrecompra masiva (25% vs 3% real) y nulo abandono natural.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Sección 5 -->
+        <h2 id="puntos-convergencia">Puntos de convergencia entre los tres estudios</h2>
+        <p>
+          Más allá de sus diferencias, los tres estudios coinciden en puntos que importan para esta investigación:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Ninguno respalda el uso de usuarios sintéticos como sustituto de las personas:</strong> Sus veredictos varían en dureza: el segundo es el más escéptico y atribuye los problemas a la naturaleza misma de los LLM, mientras que el tercero ve en el ajuste con datos reales una vía prometedora, pero ambos reconocen que el comportamiento humano no se replica con precisión.
+          </li>
+          <li>
+            <strong>Tendencia común a la complacencia:</strong> Los tres describen, con distintos nombres, una misma tendencia. El primero la llama explícitamente adulación y le atribuye el que los usuarios sintéticos lo valoren todo por igual. En el segundo aparece como la concentración de clics en la opción más obvia, y en el tercero como un exceso de compras y casi ningún abandono, algo que los autores atribuyen a que los modelos están optimizados para completar tareas. Son modelos hechos para cumplir, y esto se traduce en usuarios que hacen todo lo que se les plantea, o todo lo que tienen disponible, sin la variabilidad, la duda ni el desinterés de una persona real.
+          </li>
+          <li>
+            <strong>Datos que parecen creíbles pero no son fieles:</strong> Esa tendencia produce datos que <strong>parecen creíbles pero no son fieles</strong>. Los autores del segundo estudio lo formulan de manera explícita: estos datos pueden dar a los equipos de diseño una falsa sensación de seguridad o llevarlos a corregir problemas inexistentes, mientras los problemas reales pasan inadvertidos. El tercero llega a una conclusión equivalente al señalar que los modelos genéricos parecen creíbles pero no replican la conducta humana paso a paso generando una versión poco realista del comportamiento humano. El riesgo, entonces, no es solo que la simulación sea imprecisa, sino que su apariencia de verosimilitud oculte esa imprecisión. Es justamente ahí donde se vuelve más peligrosa la pregunta de si una investigación simulada es mejor que ninguna.
+          </li>
+        </ol>
+
+        <nav id="pager"></nav>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-inner">
+          <div class="footer-meta">
+            <p><strong>¿En qué haría clic ChatGPT?</strong> — Capítulo 03</p>
+          </div>
+          <div class="footer-nav">
+            <a href="index.html">Inicio</a>
+            <a href="referencias.html">Referencias</a>
+            <a href="#contenido">Arriba ↑</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
